@@ -9,11 +9,15 @@ class HoneyMakerBee extends Bee {
   }
 
   makeHoney() {
-    return this.honeyPot += 1;
+    return this.honeyPot++;
   }
 
   giveHoney() {
-    return this.honeyPot -= 1;
+    if (this.honeyPot === 0) {
+      return;
+    }
+    
+    return this.honeyPot--;
   }
 }
 
